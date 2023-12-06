@@ -16,7 +16,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@monorepo-take-home-test/projects": ["projects/src/index.ts"]
+    },
     "types": ["node"]
   },
   "exclude": ["node_modules", "tmp"]
