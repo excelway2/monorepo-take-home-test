@@ -17,9 +17,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monorepo-take-home-test/boards": ["boards/src/index.ts"],
-      "@monorepo-take-home-test/projects": ["projects/src/index.ts"],
-      "@monorepo-take-home-test/tasks": ["tasks/src/index.ts"]
+      "@monorepo-take-home-test/boards": ["libs/boards/src/index.ts"],
+      "@monorepo-take-home-test/projects": ["libs/projects/src/index.ts"],
+      "@monorepo-take-home-test/tasks": ["libs/tasks/src/index.ts"],
+      "@monorepo-take-home-test/ui": ["libs/ui/src/index.ts"]
     },
     "types": ["node"]
   },
