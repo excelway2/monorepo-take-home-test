@@ -2,63 +2,45 @@
 
 ## Overview
 
-This document outlines the specifications for enhancing a project management application. Built using Angular (frontend) and NestJS with Prisma (backend), the application focuses on managing projects, boards, and tasks, with an added functionality to display the count of tasks within each project. An initial setup and a 'get all projects' service implementation are provided as examples.
+This document outlines the specifications for enhancing a project management application. Built using Angular (frontend) and NestJS with Prisma (backend), the application is designed to manage projects, featuring functionalities such as adding, updating, and deleting projects, along with managing their order and priority.
 
 ## Core Functionalities
 
-### 1. Projects
+### Projects
 
-- **View Projects**: Enhance the existing implementation to display a list of all projects. Each project should include the title and a dynamically calculated count of all tasks within it.
-- **Interactive Navigation**: Implement interactive navigation to view details of each project's boards.
+- **View Projects**: Implement functionality to display a list of all projects, showing the title, description, priority, and order.
+- **Create Projects**: Allow users to add new projects with title, description, and priority.
+- **Update Projects**: Enable editing the details of existing projects.
+- **Delete Projects**: Provide the option to remove projects.
+- **Maintain Order**: Implement logic to automatically assign and update the `order` field when projects are added or deleted.
 
-### 2. Boards
+### API Endpoints
 
-- **View Boards**: Develop functionality to view boards within a selected project, displaying each board's title and a summary of tasks.
-- **Board Details**: Create a detailed view for each board, accessible by clicking on a board, showing the tasks associated with it.
+- `GET /projects`: Retrieve all projects, sorted by the `order` field.
+- `POST /projects`: Create a new project. The `order` field should be set to place the new project at the end of the list.
+- `PUT /projects/:id`: Update an existing project.
+- `DELETE /projects/:id`: Delete a project and adjust the `order` of remaining projects.
 
-### 3. Tasks
+## Optional Bonus Challenge
 
-- **Task Management**: Enable users to create, delete, and update tasks within a board.
-- **Interactive Task Reordering**: Implement drag-and-drop functionality to reorder tasks within a board.
-- **Task Display**: Present tasks using either a list or card format to enhance visual appeal and interactivity.
-
-## Bonus Challenge
-
-- **Task Priority Colors**: Implement a visual representation of task priority. This can be done by applying different colors or styles to tasks based on their priority level (Low, Medium, High). Consider using conditional class binding or other Angular techniques to achieve this.
+- **Drag-and-Drop Reordering**: As an additional feature, implement drag-and-drop functionality to reorder projects within the list. This will involve updating the `order` field in the database based on the new order after a drag-and-drop action.
 
 ## User Interface and Navigation
 
 ### Utilizing Angular Material
 
-- Use Angular Material for UI components to ensure a cohesive and user-friendly design. Customize styling as needed.
-- For tasks, `MatList` or `MatCard` can be used depending on the chosen format. Ensure that the drag-and-drop functionality is intuitive in both formats.
+- Use Angular Material components for a cohesive and user-friendly design.
+- Implement forms for creating and updating projects, ensuring validation for required fields.
+- If implementing the drag-and-drop feature, consider using Angular's CDK Drag-and-Drop module.
 
 ### Routing
 
-- Implement intuitive routing to facilitate smooth navigation between projects, boards, and task details.
-
-## API Endpoints
-
-### Projects
-
-- `GET /projects`: Enhance to include the count of all tasks within each project.
-
-### Boards
-
-- `GET /boards/:projectId`: Implement to retrieve boards for a selected project, with task summary.
-
-### Tasks
-
-- `POST /tasks`: Add a new task within a board.
-- `GET /tasks/:boardId`: Fetch tasks for a specific board.
-- `PUT /tasks/:taskId`: Update a task, including its priority.
-- `DELETE /tasks/:taskId`: Remove a task.
-- `PUT /tasks/:taskId/reorder`: Modify the order of tasks after drag-and-drop actions.
+- Include a route to a detailed view page for each project, where users can view more information and possibly edit or delete the project.
 
 ## Additional Guidelines
 
-- Focus on creating an intuitive UI/UX using Angular Material. The tasks' display should facilitate easy interaction and task management.
+- Focus on a clean and intuitive UI/UX.
 - Ensure the application is responsive and accessible across different devices.
-- Implement error handling, validation, and optionally data loading states to enhance user experience.
+- Properly handle errors and validations both on the frontend and backend.
 
-By tackling these specifications, you're not just building an application; you're sharpening your full-stack development skills with a practical, hands-on project. This is a chance to showcase your abilities in creating an intuitive and functional user interface. Enjoy the challenge and let your coding creativity flow!
+By adhering to these specifications, you will create a functional project management application, focusing on fundamental full-stack development skills with an emphasis on data management and user interaction.

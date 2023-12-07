@@ -5,50 +5,34 @@ const prisma = new PrismaClient();
 async function main() {
   // Create multiple projects
   const projects = [
-    { title: 'Project Alpha', content: 'Description of Project Alpha' },
-    { title: 'Project Beta', content: 'Description of Project Beta' },
-    { title: 'Project Gamma', content: 'Description of Project Gamma' },
-    { title: 'Project Delta', content: 'Description of Project Delta' },
+    {
+      title: 'Project Alpha',
+      description: 'Description of Project Alpha',
+      order: 0,
+    },
+    {
+      title: 'Project Beta',
+      description: 'Description of Project Beta',
+      order: 1,
+    },
+    {
+      title: 'Project Gamma',
+      description: 'Description of Project Gamma',
+      order: 2,
+    },
+    {
+      title: 'Project Delta',
+      description: 'Description of Project Delta',
+      order: 3,
+    },
   ];
 
   for (const project of projects) {
     const createdProject = await prisma.project.create({
       data: project,
     });
-
-    // Seed some boards for each project
-    await prisma.board.createMany({
-      data: [
-        {
-          title: 'Board 1',
-          content: 'Board 1 of ' + project.title,
-          projectId: createdProject.id,
-        },
-        {
-          title: 'Board 2',
-          content: 'Board 2 of ' + project.title,
-          projectId: createdProject.id,
-        },
-        {
-          title: 'Board 3',
-          content: 'Board 3 of ' + project.title,
-          projectId: createdProject.id,
-        },
-        {
-          title: 'Board 4',
-          content: 'Board 4 of ' + project.title,
-          projectId: createdProject.id,
-        },
-        {
-          title: 'Board 5',
-          content: 'Board 5 of ' + project.title,
-          projectId: createdProject.id,
-        },
-      ],
-    });
   }
 }
-
 main()
   .catch((err) => {
     console.error(err);

@@ -11,34 +11,13 @@ datasource db {
 }
 
 model Project {
-  id        String   @id @default(uuid())
-  title     String
-  content   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  Board     Board[]
-}
-
-model Board {
-  id        String   @id @default(uuid())
-  title     String
-  content   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  project   Project  @relation(fields: [projectId], references: [id])
-  projectId String
-  Task      Task[]
-}
-
-model Task {
-  id        String   @id @default(uuid())
-  title     String
-  content   String?
-  priority  Priority @default(MEDIUM)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  board     Board    @relation(fields: [boardId], references: [id])
-  boardId   String
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  priority    Priority @default(LOW)
+  order       Int
 }
 
 enum Priority {

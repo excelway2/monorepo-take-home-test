@@ -2,12 +2,11 @@
 
 ## Overview
 
-This take-home test involves developing a project management application using Angular (frontend) and NestJS with Prisma (backend), managed within an Nx monorepo. The application will focus on managing projects and boards, with an emphasis on tasks management including priority setting and interactive features.
+This take-home test involves developing a simple project management application using Angular (frontend) and NestJS with Prisma (backend), managed within an Nx monorepo. The application will focus on managing projects, allowing users to view, create, edit, and delete projects, with an emphasis on simplicity and basic functionality.
 
 ## Estimated Time for Completion
 
-- **Junior Developer**: Approximately 4-6 hours.
-- **Senior Developer**: Approximately 2-3 hours.
+- **Junior Developer**: Approximately 1-3 hours.
 
 These are guidelines and actual times may vary based on individual experience and familiarity with the specific technologies used.
 
@@ -15,15 +14,13 @@ These are guidelines and actual times may vary based on individual experience an
 
 Your task is to implement a project management application with the following features:
 
-- **Projects**: View a list of all projects, each displaying the count of tasks.
-- **Boards**: View boards within a project, with functionality to navigate to board details.
-- **Tasks**: Within a board, implement functionality to add, update, delete, and reorder tasks.
-
-Refer to the `SPECIFICATIONS.md` file for detailed requirements on the application features, including user interface and navigation guidelines.
+- **Projects**: Implement functionality to view, add, edit, and delete projects. Each project should have a title, description, and priority.
 
 ### Bonus Challenge
 
-- **Task Priority Colors**: As an optional enhancement, implement a feature to visually represent task priority (Low, Medium, High) by changing the color of the task cards or list elements.
+- **Drag-and-Drop Reordering**: As an optional enhancement, implement drag-and-drop functionality to reorder the projects in the list or card view.
+
+Refer to the `SPECIFICATIONS.md` file for detailed requirements on the application features, including user interface and navigation guidelines.
 
 ### Submission Guidelines
 
@@ -37,7 +34,7 @@ Refer to the `SPECIFICATIONS.md` file for detailed requirements on the applicati
 - Functionality: Does the application work as required? What functionalities were implemented?
 - Code Quality: Is the code clean, well-organized, and properly documented?
 - User Interface: Is the UI functional, user-friendly, and aligned with the specifications?
-- Integration: How effectively does the frontend communicate with the backend, especially in task management and data presentation?
+- Integration: How effectively does the frontend communicate with the backend, especially in project management?
 
 We appreciate the time and effort you put into this test. Good luck!
 
