@@ -11,7 +11,7 @@ This take-home test involves developing a project management application using A
 
 These are guidelines and actual times may vary based on individual experience and familiarity with the specific technologies used.
 
-### Task Description
+## Task Description
 
 Your task is to implement a project management application with the following features:
 
