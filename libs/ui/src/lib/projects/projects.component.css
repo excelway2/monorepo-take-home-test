@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 33% [col-start]);
 }
 
-.product-card {
+.project-card {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   background-color: #fff;
@@ -12,7 +12,7 @@
   padding: 15px;
 }
 
-.product-card img {
+.project-card img {
   border-radius: 15px;
   max-width: 100%;
   height: 200px;
@@ -20,16 +20,16 @@
   margin: 0 auto;
 }
 
-.product-name {
+.project-name {
   font-weight: bold;
   font-size: 22px;
 }
 
-.product-description {
+.project-description {
   color: rgb(122, 122, 122);
 }
 
-.product-price {
+.project-price {
   font-weight: bold;
   font-size: 24px;
 }
