@@ -60,6 +60,17 @@ These are guidelines and actual times may vary based on individual experience an
   npx prisma db seed
   ```
 
+- **Using Prisma Studio**:
+  Prisma Studio is an intuitive GUI for exploring and manipulating your database. It's an excellent tool for visualizing the data model and managing the data within your database. To use Prisma Studio:
+
+- Start Prisma Studio by running:
+  ```
+  npx prisma studio
+  ```
+- Prisma Studio will open in your default web browser.
+- Use the GUI to explore your database tables, view records, and even insert or modify data if needed.
+- This can be particularly useful for verifying the results of your API operations and understanding the database schema.
+
 5. **Start the Applications**
 
 - Start the NestJS backend:
