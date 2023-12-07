@@ -1,0 +1,9 @@
+<section class="product-listings" *ngFor="let project of $projects | async">
+  <div class="product-card">
+    <img [src]="imageUrl" alt="Logo" />
+    <p class="product-name">{{ project.title }}</p>
+    <p class="product-description">{{ project.content }}</p>
+    <p class="product-description">{{ project.createdAt }}</p>
+    <button class="add-to-cart-button">View Project</button>
+  </div>
+</section>
