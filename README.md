@@ -11,6 +11,36 @@ This take-home test involves developing a project management application using A
 
 These are guidelines and actual times may vary based on individual experience and familiarity with the specific technologies used.
 
+### Task Description
+
+Your task is to implement a project management application with the following features:
+
+- **Projects**: View a list of all projects, each displaying the count of tasks.
+- **Boards**: View boards within a project, with functionality to navigate to board details.
+- **Tasks**: Within a board, implement functionality to add, update, delete, and reorder tasks.
+
+Refer to the `SPECIFICATIONS.md` file for detailed requirements on the application features, including user interface and navigation guidelines.
+
+### Bonus Challenge
+
+- **Task Priority Colors**: As an optional enhancement, implement a feature to visually represent task priority (Low, Medium, High) by changing the color of the task cards or list elements.
+
+### Submission Guidelines
+
+- Ensure your application meets as many of the outlined requirements as possible.
+- Document any assumptions or decisions you made in the `NOTES.md` file.
+- If you are unable to finish all aspects of the test, please still submit what you have completed. We are interested in seeing your approach and understanding your thought process.
+- Once you are ready, push your changes to a new branch and open a pull request for review.
+
+## Evaluation Criteria
+
+- Functionality: Does the application work as required? What functionalities were implemented?
+- Code Quality: Is the code clean, well-organized, and properly documented?
+- User Interface: Is the UI functional, user-friendly, and aligned with the specifications?
+- Integration: How effectively does the frontend communicate with the backend, especially in task management and data presentation?
+
+We appreciate the time and effort you put into this test. Good luck!
+
 ## Getting Started
 
 ### Prerequisites
@@ -89,33 +119,3 @@ These are guidelines and actual times may vary based on individual experience an
 
 - The frontend application will be available at `http://localhost:4200`.
 - The backend API will be running on `http://localhost:3333`.
-
-### Task Description
-
-Your task is to implement a project management application with the following features:
-
-- **Projects**: View a list of all projects, each displaying the count of tasks.
-- **Boards**: View boards within a project, with functionality to navigate to board details.
-- **Tasks**: Within a board, implement functionality to add, update, delete, and reorder tasks.
-
-Refer to the `SPECIFICATIONS.md` file for detailed requirements on the application features, including user interface and navigation guidelines.
-
-### Bonus Challenge
-
-- **Task Priority Colors**: As an optional enhancement, implement a feature to visually represent task priority (Low, Medium, High) by changing the color of the task cards or list elements.
-
-### Submission Guidelines
-
-- Ensure your application meets as many of the outlined requirements as possible.
-- Document any assumptions or decisions you made in the `NOTES.md` file.
-- If you are unable to finish all aspects of the test, please still submit what you have completed. We are interested in seeing your approach and understanding your thought process.
-- Once you are ready, push your changes to a new branch and open a pull request for review.
-
-## Evaluation Criteria
-
-- Functionality: Does the application work as required? What functionalities were implemented?
-- Code Quality: Is the code clean, well-organized, and properly documented?
-- User Interface: Is the UI functional, user-friendly, and aligned with the specifications?
-- Integration: How effectively does the frontend communicate with the backend, especially in task management and data presentation?
-
-We appreciate the time and effort you put into this test. Good luck!
