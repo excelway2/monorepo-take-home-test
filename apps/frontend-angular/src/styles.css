@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.container {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .cards {
+    display: flex;
+    gap: 10px;
+  }
+
+  .card-container {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    margin: 10px;
+    padding: 5%;
+    width: 45%;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  .btn {
+    display: flex;
+    gap: 1.2rem;
+    margin: 20px;
+  }
+
+  .button {
+    font-weight: bold;
+    color: beige;
+    border: none;
+    border-radius: 5px;
+    padding: 3%;
+    width: max-content;
+    cursor: pointer;
+  }
+
+  .delete-button {
+    background-color: rgb(219, 32, 32);
+  }
+
+  .view-button {
+    background-color: rgb(6, 132, 141);
+    padding: 10px;
+  }
+
+  .edit-button {
+    background-color: rgb(53, 126, 4);
+  }
