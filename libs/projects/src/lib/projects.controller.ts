@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
 import { Project } from '@prisma/client';
 
@@ -10,6 +10,31 @@ export class ProjectsController {
   @Get()
   async findAll() {
     return await this.projectsService.findAll();
+  }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string): Promise<{ success: boolean; message?: string; data?: Project | undefined }> {
+    try {
+      const foundProject = await this.projectsService.findOne(id);
+      if (foundProject) {
+        return {
+          success: true,
+          message: 'Project found',
+          data: foundProject,
+        };
+      }
+
+      return {
+        success: false,
+        message: 'Project not found',
+      };
+    } catch (error: any) {
+      return {
+        success: false,
+        message: error.message || 'Failed to find project',
+        data: undefined,
+      };
+    }
   }
 
   @Post()
