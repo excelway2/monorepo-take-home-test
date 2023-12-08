@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param,Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Patch} from '@nestjs/common';
 import { ProjectsService } from './projects.service';
 import { Project } from '@prisma/client';
 
@@ -63,6 +63,34 @@ export class ProjectsController {
     };
   }
   }
+
+  @Patch(':id')
+  async update(@Param('id') id: string, @Body() data: Project): Promise<{ success: boolean; message?: string; data?: Project | undefined }> {
+    try {
+      const updatedProject = await this.projectsService.update(id, data);
+
+      if (updatedProject.success) {
+        return {
+          success: true,
+          message: 'Project successfully updated',
+          data: updatedProject?.data,
+        };
+      }
+
+      return {
+        success: false,
+        message: 'Project not updated',
+      };
+    } catch (error: any) {
+      return {
+        success: false,
+        message: error.message || 'Failed to update project',
+        data: undefined,
+      };
+    }
+  }
+
+  
 
   @Delete(':id')
   async remove(@Param('id') id: string): Promise<{ success: boolean; message?: string }> {
