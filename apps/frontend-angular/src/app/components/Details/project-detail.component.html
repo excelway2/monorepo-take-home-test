@@ -1,0 +1,14 @@
+<h2>Project Details</h2>
+
+  <div *ngIf="project" class="card-container">
+    <mat-card>
+      <mat-card-title>{{ project.title }}</mat-card-title>
+      <mat-card-subtitle>{{ project.createdAt | date }}</mat-card-subtitle>
+      <mat-card-content>{{ project.description }}</mat-card-content>
+      <div class="btn">
+        <button class="button edit-button" (click)="editProject()">Edit Project</button>
+      <button class="button delete-button" (click)="deleteProject()">Delete Project</button>
+      </div>
+      
+    </mat-card>
+  </div>
