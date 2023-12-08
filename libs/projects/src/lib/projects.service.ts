@@ -8,6 +8,12 @@ export class ProjectsService {
     return await prisma.project.findMany();
   }
 
+  async create(data: Project): Promise<Project> {
+    return prisma.project.create({
+      data,
+    });
+  }
+
   // async findOne(id: string): Promise<Project | null> {
   //   return await prisma.project.findUnique({
   //     where: {
