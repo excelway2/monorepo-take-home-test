@@ -5,6 +5,7 @@ import { PrismaClient, Project, Priority } from '@prisma/client';
 export class AppService {
   constructor(private prisma: PrismaClient) {}
 
+// CRUD operations
   async getAllProjects(): Promise<Project[]> {
     return this.prisma.project.findMany({ orderBy: { order: 'asc' } });
   }
