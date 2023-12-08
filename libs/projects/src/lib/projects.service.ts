@@ -41,11 +41,11 @@ export class ProjectsService {
     }
   }
 
-  // async remove(id: string) {
-  //   return await prisma.project.delete({
-  //     where: {
-  //       id,
-  //     },
-  //   });
-  // }
+  async remove(id: string) {
+    return await prisma.project.delete({
+      where: {
+        id,
+      },
+    });
+  }
 }
