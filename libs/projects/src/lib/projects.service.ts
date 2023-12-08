@@ -1,8 +1,7 @@
 import { PrismaClient, Project } from '@prisma/client';
-import { Injectable,Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
 const prisma = new PrismaClient();
-const logger = new Logger('ProjectsService');
 
 @Injectable()
 export class ProjectsService {
@@ -36,6 +35,27 @@ export class ProjectsService {
       return {
         success: false,
         message: error.message || 'Failed to add project',
+        data: undefined,
+      };
+    }
+  }
+
+  async update(id: string, data: Project): Promise<{ success: boolean; message?: string; data?: Project | undefined }> {
+    try {
+      const updatedProject = await prisma.project.update({
+        where: { id },
+        data,
+      });
+
+      return {
+        success: true,
+        message: 'Project successfully updated',
+        data: updatedProject,
+      };
+    } catch (error: any) {
+      return {
+        success: false,
+        message: error.message || 'Failed to update project',
         data: undefined,
       };
     }
