@@ -16,11 +16,20 @@ export class ProjectsController {
   async create(@Body() data: Project): Promise<{ success: boolean, message?: string, data?: Project | undefined }> {
     try {
     const createdProject = await this.projectsService.create(data);
+    if(createdProject.success) {
+      return {
+        success: true,
+        message: 'Project successfully added',
+        data: createdProject?.data,
+      };
+    } 
+
     return {
-      success: true,
-      message: 'Project successfully added',
-      data: createdProject?.data,
+      success: false,
+      message: 'Project not added',
     };
+
+   
   } catch (error:any) {
     return {
       success: false,
