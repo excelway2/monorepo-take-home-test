@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param,Delete } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
 import { Project } from '@prisma/client';
 
@@ -62,6 +62,29 @@ export class ProjectsController {
       data: undefined,
     };
   }
+  }
+
+  @Delete(':id')
+  async remove(@Param('id') id: string): Promise<{ success: boolean; message?: string }> {
+    try {
+      const deletedProject = await this.projectsService.remove(id);
+      if (deletedProject) {
+        return {
+          success: true,
+          message: 'Project successfully deleted',
+        };
+      }
+
+      return {
+        success: false,
+        message: 'Project not found or unable to delete',
+      };
+    } catch (error: any) {
+      return {
+        success: false,
+        message: error.message || 'Failed to delete project',
+      };
+    }
   }
 
 }
