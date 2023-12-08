@@ -5,7 +5,8 @@ import { PrismaClient, Project, Priority } from '@prisma/client';
 export class AppService {
   constructor(private prisma: PrismaClient) {}
 
-// CRUD operations
+  // CRUD operations
+
   async getAllProjects(): Promise<Project[]> {
     return this.prisma.project.findMany({ orderBy: { order: 'asc' } });
   }
@@ -20,7 +21,10 @@ export class AppService {
   }
 
   async createProject(projectData: { title: string; description?: string; priority: Priority }): Promise<Project> {
-    const project = await this.prisma.project.create({ data: { ...projectData, order: 0 } });
+    const lastProject = await this.prisma.project.findFirst({ orderBy: { order: 'desc' } });
+    const order = lastProject ? lastProject.order + 1 : 0;
+
+    const project = await this.prisma.project.create({ data: { ...projectData, order } });
     return project;
   }
 
@@ -36,5 +40,14 @@ export class AppService {
   async deleteProject(id: string): Promise<void> {
     await this.getProjectById(id);
     await this.prisma.project.delete({ where: { id } });
+
+    
+    const remainingProjects = await this.prisma.project.findMany({ orderBy: { order: 'asc' } });
+    for (let i = 0; i < remainingProjects.length; i++) {
+      await this.prisma.project.update({
+        where: { id: remainingProjects[i].id },
+        data: { order: i },
+      });
+    }
   }
 }
