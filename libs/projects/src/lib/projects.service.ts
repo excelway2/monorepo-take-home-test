@@ -10,6 +10,14 @@ export class ProjectsService {
     return await prisma.project.findMany();
   }
 
+  async findOne(id: string): Promise<Project | null> {
+    return await prisma.project.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
+
   async create(data: Project): Promise<{ success: boolean, message?: string, data?: Project | undefined }> {
     try {
       const createdProject = await prisma.project.create({
@@ -32,14 +40,6 @@ export class ProjectsService {
       };
     }
   }
-
-  // async findOne(id: string): Promise<Project | null> {
-  //   return await prisma.project.findUnique({
-  //     where: {
-  //       id,
-  //     },
-  //   });
-  // }
 
   // async remove(id: string) {
   //   return await prisma.project.delete({
