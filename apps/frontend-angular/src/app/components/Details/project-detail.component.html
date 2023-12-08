@@ -1,14 +1,31 @@
-<h2>Project Details</h2>
-
-  <div *ngIf="project" class="card-container">
-    <mat-card>
-      <mat-card-title>{{ project.title }}</mat-card-title>
-      <mat-card-subtitle>{{ project.createdAt | date }}</mat-card-subtitle>
-      <mat-card-content>{{ project.description }}</mat-card-content>
-      <div class="btn">
-        <button class="button edit-button" (click)="editProject()">Edit Project</button>
-      <button class="button delete-button" (click)="deleteProject()">Delete Project</button>
-      </div>
-      
+<div class="container">
+  <h2>Project Details</h2>
+  <div *ngIf="project">
+    <mat-card class="content">
+      <form [formGroup]="projectForm" (ngSubmit)="editProject()">
+        <mat-card-title>
+          <input formControlName="title" placeholder="Title" />
+          <div *ngIf="projectForm.get('title')?.hasError('required')" class="error-message">
+            Title is required.
+          </div>
+        </mat-card-title>
+        <mat-card-subtitle>{{ project.createdAt | date }}</mat-card-subtitle>
+        <mat-card-content>
+          <textarea formControlName="description" placeholder="Description"></textarea>
+        </mat-card-content>
+        <mat-card-content>
+          <label for="priority">Priority:</label>
+          <select formControlName="priority">
+            <option value="LOW">Low</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="HIGH">High</option>
+          </select>
+        </mat-card-content>
+        <div class="btn">
+          <button class="button edit-button" type="submit">Edit Project</button>
+          <button class="button delete-button" (click)="deleteProject()">Delete Project</button>
+        </div>
+      </form>
     </mat-card>
   </div>
+</div>
