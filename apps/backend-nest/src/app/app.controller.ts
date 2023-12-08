@@ -2,7 +2,7 @@ import { Controller, Get, Param, Post, Body, Put, Delete } from '@nestjs/common'
 import { AppService } from './app.service';
 import { Project, Priority } from '@prisma/client';
 
-@Controller('api/projects')
+@Controller('projects')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -35,4 +35,3 @@ export class AppController {
     return this.appService.deleteProject(id);
   }
 }
-
