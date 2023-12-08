@@ -21,7 +21,7 @@ export class AddProjectComponent {
 
   addProject(): void {
     this.projectService.createProject(this.projectForm.value).subscribe((newProject) => {
-      this.router.navigate(['projects', newProject.id]);
+      this.router.navigate(['/']);
     });
   }
 }

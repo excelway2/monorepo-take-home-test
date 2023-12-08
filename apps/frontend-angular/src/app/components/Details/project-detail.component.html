@@ -1,22 +1,22 @@
 <div class="container">
-  <h2>Project Details</h2>
-   <button class="btn button back-button" (click)="navigateToHome()">Back to Home</button>
+  <button class="btn button back-button" (click)="navigateToHome()">Back to Home</button>
+  <h1>Project Details</h1>
   <div *ngIf="project">
     <mat-card class="content">
-      <form [formGroup]="projectForm" (ngSubmit)="editProject()">
+      <form [formGroup]="projectForm" (ngSubmit)="editProject()" class="form">
         <mat-card-title>
-          <input formControlName="title" placeholder="Title" />
+          <input formControlName="title" placeholder="Title" class="input"/>
           <div *ngIf="projectForm.get('title')?.hasError('required')" class="error-message">
             Title is required.
           </div>
         </mat-card-title>
-        <mat-card-subtitle>{{ project.createdAt | date }}</mat-card-subtitle>
+        <mat-card-subtitle class="date">{{ project.createdAt | date }}</mat-card-subtitle>
         <mat-card-content>
-          <textarea formControlName="description" placeholder="Description"></textarea>
+          <textarea formControlName="description" placeholder="Description" class="textarea" rows="10px" cols="50px"></textarea>
         </mat-card-content>
         <mat-card-content>
           <label for="priority">Priority:</label>
-          <select formControlName="priority">
+          <select formControlName="priority" class="select">
             <option value="LOW">Low</option>
             <option value="MEDIUM">Medium</option>
             <option value="HIGH">High</option>

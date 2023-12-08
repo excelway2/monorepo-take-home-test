@@ -1,19 +1,19 @@
 <div class="container">
-  <h2>Add New Project</h2>
-  <form [formGroup]="projectForm" (ngSubmit)="addProject()">
-    <mat-card class="content">
+  <h1>Add New Project</h1>
+  <form [formGroup]="projectForm" (ngSubmit)="addProject()" class="form">
+    <mat-card>
       <mat-card-title>
-        <input formControlName="title" placeholder="Title" />
+        <input formControlName="title" placeholder="Title" class="input" />
         <div *ngIf="projectForm.get('title')?.hasError('required')" class="error-message">
           Title is required.
         </div>
       </mat-card-title>
       <mat-card-content>
-        <textarea formControlName="description" placeholder="Description"></textarea>
+        <textarea formControlName="description" placeholder="Description" class="textarea" rows="10px" cols="50px"></textarea>
       </mat-card-content>
       <mat-card-content>
         <label for="priority">Priority:</label>
-        <select formControlName="priority">
+        <select formControlName="priority" class="select">
           <option value="LOW">Low</option>
           <option value="MEDIUM">Medium</option>
           <option value="HIGH">High</option>
