@@ -12,6 +12,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { AddProjectComponent } from './components/AddProject/add-project.component';
 import { DatePipe } from '@angular/common';
 import { HomeComponent } from './components/Home/home.component';
 import { ProjectDetailComponent } from './components/Details/project-detail.component';
@@ -20,7 +21,7 @@ import { AppComponent } from './app.component';
 import { appConfig } from './app.config';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProjectDetailComponent],
+  declarations: [AppComponent, HomeComponent, ProjectDetailComponent, AddProjectComponent],
   imports: [
     MatIconModule,
     BrowserModule,

@@ -1,5 +1,6 @@
 <div class="container">
   <h2>Project Details</h2>
+   <button class="btn button back-button" (click)="navigateToHome()">Back to Home</button>
   <div *ngIf="project">
     <mat-card class="content">
       <form [formGroup]="projectForm" (ngSubmit)="editProject()">

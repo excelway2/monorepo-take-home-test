@@ -22,4 +22,8 @@ export class HomeComponent implements OnInit {
   viewProject(id: string): void {
     this.router.navigate(['projects', id]);
   }
+
+  navigateToAddProject(): void {
+    this.router.navigate(['add-project']);
+  }
 }

@@ -22,7 +22,7 @@ export class ProjectDetailComponent implements OnInit {
     this.projectForm = this.fb.group({
       title: ['', Validators.required],
       description: [''],
-      priority: [''],
+      priority: ['LOW'],
     });
   }
 
@@ -55,5 +55,9 @@ export class ProjectDetailComponent implements OnInit {
         this.router.navigate(['/']);
       });
     }
+  }
+
+   navigateToHome(): void {
+    this.router.navigate(['/']);
   }
 }
