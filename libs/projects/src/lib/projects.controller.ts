@@ -13,8 +13,21 @@ export class ProjectsController {
   }
 
   @Post()
-  async create(@Body() data: Project): Promise<Project> {
-    return await this.projectsService.create(data);
+  async create(@Body() data: Project): Promise<{ success: boolean, message?: string, data?: Project | undefined }> {
+    try {
+    const createdProject = await this.projectsService.create(data);
+    return {
+      success: true,
+      message: 'Project successfully added',
+      data: createdProject?.data,
+    };
+  } catch (error:any) {
+    return {
+      success: false,
+      message: error.message || 'Failed to add project',
+      data: undefined,
+    };
+  }
   }
 
 }
