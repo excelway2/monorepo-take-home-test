@@ -1,3 +1,3 @@
 export * from './lib/ui/ui.component';
 
-export * from './lib/projects/projects.component';
+export * from './lib/lib-components/projects/projects.component';
