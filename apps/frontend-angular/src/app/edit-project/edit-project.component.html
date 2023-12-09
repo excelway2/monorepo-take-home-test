@@ -1,0 +1,31 @@
+<div class="card mt-5 ">
+  <div class="card-body">
+    <div class="container">
+      <h2 class="text-center mb-4">Edit ProjectModel</h2>
+
+      <div class="form-container">
+        <form [formGroup]="editFromGroup" id="editProjectForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input formControlName="title" type="text" class="form-control" id="title" name="title" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea formControlName="description" class="form-control" id="description" name="description" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select formControlName="priority" class="form-control" id="priority" name="priority" required>
+              <option value="HIGH">HIGH</option>
+              <option value="MEDIUM">MEDIUM</option>
+              <option value="LOW">LOW</option>
+            </select>
+          </div>
+          <div class="form-group mt-4">
+            <button type="submit" (click)="onEditProject()" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+

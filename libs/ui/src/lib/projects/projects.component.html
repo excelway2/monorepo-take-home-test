@@ -6,11 +6,13 @@
     <p class="project-description">{{ project.createdAt }}</p>
     <div class="buttons">
       <div>
-        <button class="add-to-cart-button">View Project</button>
+        <a routerLink="{{'view/'+project.id}}">
+          <button  class="add-to-cart-button" routerLink="{{'view/'+project.id}}">View Project</button>
+        </a>
       </div>
       <div class="btn-edit-delete">
-        <button class="add-to-cart-button">Delete</button>
-        <button class="add-to-cart-button">Edit</button>
+        <button class="add-to-cart-button" (click)="onDeleteProject(project.id)">Delete</button>
+        <button class="add-to-cart-button" routerLink="{{'edit/'+project.id}}">Edit</button>
       </div>
     </div>
   </div>

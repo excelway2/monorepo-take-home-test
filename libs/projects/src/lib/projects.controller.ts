@@ -4,9 +4,7 @@ import { ProjectsService } from './projects.service';
 
 @Controller('projects')
 export class ProjectsController {
-  constructor(
-    private projectsService: ProjectsService,
-  ) {}
+  constructor(private projectsService: ProjectsService) {}
 
   @Get('')
   getProjects() {
@@ -29,7 +27,7 @@ export class ProjectsController {
   }
 
   @Delete ('delete/:id')
-  deleteProject(@Param('id') id: string) {
+  deleteProject(@Param('id') id: string){
     return this.projectsService.deleteProject(id);
   }
 }

@@ -34,10 +34,6 @@ export class ProjectsService {
       },
     });
 
-    if (!project) {
-      throw new NotFoundException('there is no project for the id' + id)
-    }
-
     return this.prisma.project.update({
       where: {
         id: id,
@@ -55,11 +51,6 @@ export class ProjectsService {
         id: id,
       },
     });
-
-
-    if (!project) {
-      throw new NotFoundException('there is no project for the id' + id)
-    }
 
     // delete project
     await this.prisma.project.delete({
