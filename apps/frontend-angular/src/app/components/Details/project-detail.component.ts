@@ -43,7 +43,7 @@ export class ProjectDetailComponent implements OnInit {
   editProject(): void {
   if (this.project?.id) {
     this.projectService.updateProject(this.project.id, this.projectForm.value).subscribe(() => {
-      this.router.navigate(['projects', this.project!.id]);
+      this.router.navigate(['/']);
     });
   }
 }
