@@ -1,0 +1,56 @@
+<div class="modal-background bg-black bg-opacity-50 fixed inset-0 overflow-y-auto " [ngClass]="{'hidden':!this.modalVisibleView}"
+(click)="quitModal()">
+
+    <div class="modal-container w-2/4 mx-auto  bg-white my-20 px-8 py-1 rounded  " (click)="stopClosingModal($event)">
+  
+    <div class="header-modal ">
+        <div class="flex justify-between pb-6">
+        <span class="material-symbols-outlined border p-1 rounded">
+            manage_accounts
+            </span>
+            <button (click)="quitModal()">
+        <span class="material-symbols-outlined ">
+            close
+            </span>
+        </button></div>
+            <div class="description">
+                <h1 class="font-semibold">Project : <span class="text-green-800 font-bold">{{projectSelected?.title}}</span> </h1>
+            </div>
+        </div>
+  
+   <div class="contente-modal">
+    <div class="grid grid-cols-2 gap-4 ">
+        <div class="case ">
+            <label for="title" class="">Title</label>
+            <input type="text" class="" readonly value="{{projectSelected?.title}}">
+        </div>
+        <div class="case">
+            <label for="description">Description</label>
+            <textarea type="texta"  class="border" readonly value="{{projectSelected?.description}}"></textarea>
+        </div>
+    
+        <div class="case">
+            <label for="priority">Priority:</label>
+            <input type="text" class="" readonly value="{{projectSelected?.priority}}">
+     </div>
+        <div class="case">
+            <label for="order">Order</label>
+            <input type="number"readonly value="{{projectSelected?.order}}">
+        </div>
+        <div class="case">
+            <label for="order">CreatedAt </label>
+            <input type="text" readonly value="{{projectSelected?.createdAt|date:'short'}}">
+        </div>
+        <div class="case">
+            <label for="order">UpdatedAt</label>
+            <input type="text"readonly value="{{projectSelected?.updatedAt|date:'short'}}">
+        </div>
+
+
+
+</div>
+   </div>
+    
+    </div>
+
+</div>

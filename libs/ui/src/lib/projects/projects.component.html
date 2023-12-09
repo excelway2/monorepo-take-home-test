@@ -1,4 +1,4 @@
-<section class="project-listings" *ngFor="let project of $projects | async">
+<!-- <section class="project-listings" *ngFor="let project of $projects | async">
   <div class="project-card">
     <img [src]="imageUrl" alt="Logo" />
     <p class="project-name">{{ project.title }}</p>
@@ -6,4 +6,20 @@
     <p class="project-description">{{ project.createdAt }}</p>
     <button class="add-to-cart-button">View Project</button>
   </div>
+</section> -->
+<ng-container *ngFor="let project of projects ">
+<section  class="flex justify-between  mx-20 my-3 bg-slate-300 p-10 rounded-lg relative">
+  <span class="orde font-semibold material-symbols-outlined border-2 border-slate-950 text-sm p-1 rounded">{{project.order }}</span>
+  <img [src]="imageUrl" alt="Logo" class="rounded-full w-14 border">
+  <span class="title font-semibold">{{project.title }}</span>
+  <span class="description max-w-md font-semibold italic">{{project.description}}</span>
+  <span class="priority font-bold ">{{project.priority}}</span>
+  <span class="creatAt font-semibold">{{project.createdAt|date:'short'}}</span>
+  <button class="update bg-slate-400 rounded-sm  shadow-xl hover:bg-cyan-600" (click)="visible(project)"><span class="font-semibold text-white p-4">View Project</span></button>
+  <button class="update bg-slate-400 rounded-sm  shadow-xl hover:bg-cyan-600"><span class="font-semibold text-white p-4">Update</span></button>
+  <button class="bg-slate-400 hover:bg-red-300 rounded-sm w-7 shadow-xl" (click)=" deletProjectById(project.id)">
+    <span class="font-semibold text-white">X</span>
+  </button>
 </section>
+</ng-container>
+<monorepo-take-home-test-view-project [modalVisibleView]="modalVisibleView" [projectSelected]="projectSelected" ></monorepo-take-home-test-view-project>

@@ -1,0 +1,63 @@
+<div class="modal-background bg-black bg-opacity-50 fixed inset-0 overflow-y-auto " [ngClass]="{'hidden':!this.modalVisible}"
+(click)="quitModal()">
+
+    <div class="modal-container w-2/4 mx-auto  bg-white my-20 px-8 py-1 rounded  " (click)="stopClosingModal($event)">
+  
+    <div class="header-modal ">
+        <div class="flex justify-between pb-6">
+        <span class="material-symbols-outlined border p-1 rounded">
+            manage_accounts
+            </span>
+            <button (click)="quitModal()">
+        <span class="material-symbols-outlined ">
+            close
+            </span>
+        </button></div>
+            <div class="description">
+                <h1 class="font-semibold">Add Project</h1>
+            </div>
+        </div>
+  
+   <div class="contente-modal">
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()"  class="grid grid-cols-2 gap-4 ">
+        <div class="case ">
+            <label for="title" class="">Title</label>
+            <input type="text" class="" formControlName="title" #titleValue (click)="checkIfTitleExist(titleValue.value)">
+           <span *ngIf="projectForm.get('title')!.hasError('required') && projectForm.get('title')!.touched" class="text-red-500 font-semibold font-mono text-sm">*The Ttle is required</span>
+           <span *ngIf="titleExist && projectForm.get('title')!.touched" class="text-red-500 font-semibold font-mono text-sm">*The Title is AlreadyExist</span>
+        </div>
+        <div class="case">
+            <label for="description">Description</label>
+            <textarea type="texta" formControlName="description" class="border"></textarea>
+        </div>
+    
+        <div class="case">
+            <label for="priority">Priority:</label>
+  <select id="priority" formControlName="priority" class="border h-10 rounded">
+    <option value="" disabled>Select a Priority</option>
+    <option value="LOW">LOW</option>
+    <option value="MEDIUM">MEDIUM</option>
+    <option value="HIGH">HIGH</option>
+  </select>
+  <span *ngIf="projectForm.get('priority')!.hasError('required') && projectForm.get('priority')!.touched" class="text-red-500 font-semibold font-mono text-sm">*The Priority is required</span>
+     </div>
+        <div class="case">
+            <label for="order">Order</label>
+            <input type="number" formControlName="order" #orderValue (input)="checkIfOrderExist(orderValue.value)">
+            <span *ngIf="projectForm.get('order')!.hasError('required') && projectForm.get('order')!.touched" class="text-red-500 font-semibold font-mono text-sm">*The Order is required</span>
+            <span *ngIf="orderExist && projectForm.get('order')!.touched" class="text-red-500 font-semibold font-mono text-sm">*The Order is AlreadyExist</span>
+        </div>
+<div class="col-span-2 mb-2">
+    <div class="flex justify-between">
+    <button class="rounded bg-white w-72  h-9 border font-semibold" (click)="quitModal()">Cancel</button>
+    <button class="rounded bg-indigo-50 w-80 h-9 font-semibold text-cyan-600" type="submit">Add </button>
+</div>
+</div>
+
+
+    </form>
+   </div>
+    
+    </div>
+
+</div>
