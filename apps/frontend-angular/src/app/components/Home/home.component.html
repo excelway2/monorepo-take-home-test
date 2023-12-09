@@ -1,14 +1,15 @@
 <div class="container">
   <h1>Welcome To Our Swimlane</h1>
   <button class="btn button add-button" (click)="navigateToAddProject()">Add Project</button>
-<div class="cards">
+  <div class="cards">
     <div *ngFor="let project of projects" class="card-container">
-    <mat-card class="content">
-      <mat-card-title>{{ project.title }}</mat-card-title>
-      <mat-card-subtitle>{{ project.createdAt | date }}</mat-card-subtitle>
-      <mat-card-content>{{ project.description }}</mat-card-content>
-      <button class="btn button view-button" (click)="viewProject(project.id)">View Project</button>
-    </mat-card>
+      <mat-card class="content">
+        <mat-card-title>{{ project.title }}</mat-card-title>
+        <mat-card-subtitle>{{ project.createdAt | date }}</mat-card-subtitle>
+        <mat-card-content class="description">{{ project.description }}</mat-card-content>
+        <mat-card-content class="order">Order: {{ project.order }}</mat-card-content>
+        <button class="btn button view-button" (click)="viewProject(project.id)">View Project</button>
+      </mat-card>
+    </div>
   </div>
 </div>
-  
