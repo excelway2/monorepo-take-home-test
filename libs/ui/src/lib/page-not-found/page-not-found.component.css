@@ -1,0 +1,20 @@
+go-back-home-button {
+    background-image: linear-gradient(to right, #4b6cb7 0%, #182848 51%, #4b6cb7 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-position 0.5s, color 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .go-back-home-button:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }

@@ -1,21 +1,28 @@
 :host {
   display: grid;
-  gap: 40px;
-  grid-template-columns: repeat(3, 33% [col-start]);
+  gap: 20px; 
+  grid-template-columns: 100%; 
+}
+
+@media (min-width: 768px) {
+  :host {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .project-card {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  background-color: #f5f5f5;
   border-radius: 15px;
   padding: 15px;
 }
 
+
 .project-card img {
   border-radius: 15px;
   max-width: 100%;
-  height: 200px;
+  height: auto; /* Auto height for responsiveness */
   display: block;
   margin: 0 auto;
 }
@@ -34,18 +41,96 @@
   font-size: 24px;
 }
 
+.button-group {
+  display: flex;
+  justify-content: center; /* Aligns the buttons within each project card */
+  margin-top: 10px; /* Adds space between the buttons and card content */
+}
+
 .add-to-cart-button {
-  background: rgb(49, 175, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(49, 175, 255, 1) 0%,
-    rgba(0, 123, 252, 1) 100%
-  );
-  padding: 10px 20px;
-  border-radius: 30px;
-  border: none;
-  color: rgb(219, 233, 248);
-  cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-image: linear-gradient(to right, #4b6cb7 0%, #182848  51%, #4b6cb7  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.add-to-cart-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+
+}
+.delete-button {
+  background-image: linear-gradient(to right, #a73737 0%, #7a2828  51%, #a73737  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.delete-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #50C9C3 0%, #96DEDA  51%, #50C9C3  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.priority-label {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.high-priority {
+  background-color: #f99; 
+  color: #900;
+  width: fit-content; 
+}
+
+.medium-priority {
+  background-color: #fd9; 
+  color: #c60;
+  width: fit-content; 
+}
+
+.low-priority {
+  background-color: #9f9; 
+  color: #060;
+  width: fit-content;
 }

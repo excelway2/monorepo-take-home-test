@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { UiComponent } from '@monorepo-take-home-test/ui';
+import { ProjectsComponent, UiComponent } from '@monorepo-take-home-test/ui';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, UiComponent],
+  imports: [RouterModule, UiComponent, ProjectsComponent],
   selector: 'monorepo-take-home-test-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

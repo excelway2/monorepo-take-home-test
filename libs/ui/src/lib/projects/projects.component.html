@@ -1,9 +1,17 @@
+<div class="button-container">
+  <button class="btn-grad" routerLink="/projects/new">New Project</button>
+</div>
 <section class="project-listings" *ngFor="let project of $projects | async">
-  <div class="project-card">
-    <img [src]="imageUrl" alt="Logo" />
-    <p class="project-name">{{ project.title }}</p>
-    <p class="project-description">{{ project.description }}</p>
-    <p class="project-description">{{ project.createdAt }}</p>
-    <button class="add-to-cart-button">View Project</button>
+  
+  <div class="project-card bg-white shadow-md rounded-lg p-6">
+    <img [src]="imageUrl" alt="Logo" class="rounded-lg mx-auto max-w-full h-auto sm:max-w-none">
+    <p class="project-name text-left font-bold mt-4">{{ project.title }}</p>
+    <div [ngClass]="getPriorityClass(project.priority)" class="priority-label text-center">{{ project.priority }}</div>
+    <p class="project-description text-gray-500 text-left mt-2">{{ project.createdAt | date:'yyyy-MM-dd' }}</p>
+    <div class="flex justify-left mt-4">
+      <button class="add-to-cart-button mx-2" [routerLink]="['/projects/',project.id]">Details</button>
+      <button class="delete-button mx-2" (click)="removeProject(project.id)" >Remove</button>
+    </div>
   </div>
+  
 </section>
