@@ -1,0 +1,71 @@
+/* Styling for form container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Styling for mat-form-field */
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for mat-label */
+  .mat-form-field-label {
+    font-weight: bold;
+  }
+  
+  /* Styling for input, textarea, and select */
+  input.mat-input-element,
+  textarea.mat-input-element,
+  .mat-select-value,
+  .mat-select-trigger {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  /* Styling for mat-error */
+  .mat-error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  /* Styling for submit button */
+  button.mat-raised-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button.mat-raised-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button.mat-raised-button:hover:not(:disabled) {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

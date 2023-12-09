@@ -1,0 +1,46 @@
+/* Styling for mat-form-field */
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for mat-label */
+  .mat-form-field-label {
+    font-weight: bold;
+  }
+  
+  /* Styling for mat-input */
+  input.mat-input-element, textarea.mat-input-element, .mat-select-trigger {
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for mat-error */
+  .mat-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+  /* Styling for mat-button */
+  button.mat-raised-button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #0056b3;
+  }
+  

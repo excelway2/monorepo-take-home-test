@@ -1,0 +1,28 @@
+
+
+
+
+
+.edit-button {
+  background-color: rgb(207, 207, 38);
+}
+
+.delete-button {
+  background-color: rgba(255, 13, 0, 0.839);
+  margin-left: 200px;
+}
+
+.new-button{
+  background-color: rgb(17, 233, 17);
+}
+/* Add this CSS code to your component's CSS file (projects.component.css) */
+
+/* Style for the draggable items */
+.mat-card.cdk-drag {
+  transition: transform 0.3s ease; /* Transition effect for smooth movement */
+}
+
+/* Style for the container where items are dropped */
+.row.cdk-drop-list-dragging {
+  border: 2px dashed #ccc; /* Visual indication of a drop zone */
+}

@@ -1,0 +1,17 @@
+
+
+
+
+
+.edit-button {
+  background-color: rgb(207, 207, 38);
+}
+
+.delete-button {
+  background-color: rgba(255, 13, 0, 0.839);
+  margin-left: 200px;
+}
+
+.new-button{
+  background-color: rgb(17, 233, 17);
+}

@@ -1,0 +1,81 @@
+
+<!-- <div class="page-wrapper">
+  <mat-grid-list cols="2" rowHeight="2:1" class="centered-grid-list">
+    <mat-grid-tile *ngFor="let project of $projects | async" class="centered-tile">
+      <div class="project-card">
+        <div class="image-container">
+          <img [src]="imageUrl" alt="Logo" class="project-image" />
+        </div>
+        <p class="project-name">{{ project.title }}</p>
+        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description">{{ project.createdAt }}</p>
+        <button class="add-to-cart-button">View Project</button>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>  
+</div> -->
+
+<!-- <div class="card-container">
+  <mat-card class="example-card" *ngFor="let project of $projects | async">
+    <mat-card-header>
+      <div class="example-header-image"></div>
+      <mat-card-title>{{ project.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="imageUrl" alt="Logo">
+    <mat-card-content>
+      <p>{{ project.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>DELETE</button>
+      <button mat-button>UPDATE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+ -->
+
+ <!-- <h2>Projects</h2>
+<div class="container">
+  <mat-card class="book-card" *ngFor="let project of $projects | async">
+    <mat-card-header>
+      <mat-card-title>{{ project.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="imageUrl" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>{{ project.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button color="accent">
+        <mat-icon class="yellow-icon">edit</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div> -->
+
+<!-- <div class="card">
+  <img class="card-img-top" src="holder.js/100x180/" alt="">
+  <div class="card-body">
+    <h4 class="card-title">Title</h4>
+    <p class="card-text">Text</p>
+  </div>
+</div> -->
+<div class="container py-5" *ngFor="let project of $projects | async">
+  <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+    <div class="col">
+      <div class="card" style="width: 18rem;"> <!-- Adjust card width -->
+        <img [src]="imageUrl" class="card-img-top" style="height: 150px;" alt="..."> <!-- Adjust image size -->
+        <div class="card-body">
+          <h5 class="card-title">TIRAMISU CAKE</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+            dignissimos accusantium amet similique velit iste.</p>
+        </div>
+        <div class="mb-5 d-flex justify-content-around">
+          <h3>190$</h3>
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

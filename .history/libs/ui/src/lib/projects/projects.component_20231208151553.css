@@ -1,0 +1,21 @@
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap between cards */
+  margin-left: 20px; /* Add left margin */
+  margin-right: 20px; /* Add right margin */
+}
+
+.book-card {
+  flex-basis: calc(33.33% - 20px); /* Set the card width to 33.33% with some spacing */
+  max-width: calc(33.33% - 20px); /* Ensure the card doesn't exceed 33.33% width */
+  box-sizing: border-box;
+  /* Additional styles for card */
+}
+
+.container >*{
+  flex: 1 1 350px;
+}
+

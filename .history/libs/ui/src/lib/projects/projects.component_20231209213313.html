@@ -1,0 +1,46 @@
+<div class="py-5">
+  <!-- Container for projects -->
+
+  <!-- Button to add new project -->
+  <div class="d-flex justify-content-between mb-3">
+    <a mat-button color="primary" class="new-button" routerLink="/add">+ New</a>
+  </div>
+
+  <!-- Group for handling drag-and-drop functionality -->
+  <div cdkDropListGroup>
+    <!-- Row for displaying project cards -->
+    <div class="row" cdkDropList (cdkDropListDropped)="onDrop($event)">
+      <!-- Loop through projects asynchronously -->
+      <ng-container *ngFor="let project of $projects | async; let i = index">
+        <!-- Column containing a draggable project card -->
+        <div class="col-md-4 mb-4" cdkDrag [cdkDragData]="project">
+          <!-- Material Card for displaying project details -->
+          <mat-card class="card">
+            <!-- Card image -->
+            <img [src]="imageUrl" class="card-img-top" style="height: 150px;" alt="LOGO">
+
+            <!-- Card content: title, description, and created date -->
+            <mat-card-content>
+              <h3 class="mat-card-title text-center">{{ project.title }}</h3>
+              <p class="mat-card-subtitle text-center">{{ project.description }}</p>
+              <p class="mat-card-subtitle text-center">Created at: {{ project.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+            </mat-card-content>
+
+            <!-- Card actions: Edit and Delete buttons -->
+            <mat-card-actions>
+              <div class="d-flex justify-content-between">
+                <!-- Edit button linked to edit project route -->
+                <a mat-button class="edit-button" [routerLink]="['/edit', project?.id]">Edit</a>
+                <!-- Delete button triggering project deletion -->
+                <button mat-button class="delete-button" (click)="delete(project.id)">Delete</button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+        <!-- Create a new row after every 3rd project card -->
+        <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
+      </ng-container>
+    </div>
+  </div>
+</div>

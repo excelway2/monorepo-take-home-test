@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+.card{
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+.card-body{
+  padding: 25px;
+  margin-top: -15px;
+}
+.btn-primary{
+  border-radius: 50px;
+  width: 120px;
+}
+.btn-primary:hover{
+  background-color: black;
+  border: none;
+}
+h3,h5{
+  color: rgb(0, 91, 228);
+}
+/* Adjustments for Angular Material components */
+.mat-card {
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.mat-card-content {
+  padding: 25px;
+  margin-top: -15px;
+}
+
+.mat-raised-button {
+  border-radius: 50px;
+  width: 120px;
+}
+
+.mat-raised-button:hover {
+  background-color: black;
+  border: none;
+}
+
+
+.edit-button {
+  background-color: rgb(207, 207, 38); /* Set the background color for the "Edit" button */
+}
+
+.delete-button {
+  background-color: rgba(255, 13, 0, 0.839); /* Set the background color for the "Delete" button */
+  margin-left: 200px; /* Add margin to the left of the "Delete" button */
+}
+

@@ -1,0 +1,27 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="mt-4 p-3 border rounded">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" formControlName="title" id="title" class="form-control" />
+      <div *ngIf="projectForm?.get('title')?.errors?.required" class="error-message">Title is required</div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea formControlName="description" id="description" class="form-control" rows="3"></textarea>
+    </div>
+  
+    <div class="mb-3">
+      <label for="priority" class="form-label">Priority:</label>
+      <select formControlName="priority" class="form-control">
+        <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+      </select>
+      
+    </div>
+  
+    <div>
+      <button type="submit" [disabled]="!projectForm.valid" class="btn btn-primary">Add Project</button>
+    </div>
+  
+  </form>
+  

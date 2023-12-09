@@ -1,0 +1,47 @@
+/* Styling for form fields */
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for form labels */
+  .mat-form-field-label {
+    font-weight: bold;
+  }
+  
+  /* Styling for form inputs */
+  .mat-input-element {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for error messages */
+  .mat-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+  /* Styling for submit button */
+  .mat-raised-button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .mat-raised-button:hover {
+    background-color: #0056b3;
+  }
+  

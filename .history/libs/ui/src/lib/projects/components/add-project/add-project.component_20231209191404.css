@@ -1,0 +1,52 @@
+/* Styling for form */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Styling for form labels */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  /* Styling for form inputs */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for error messages */
+  .text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+  
+  /* Styling for submit button */
+  .btn-success {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  

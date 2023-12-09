@@ -1,0 +1,163 @@
+/* :host {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 33% [col-start]);
+}
+
+.project-card {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.project-card img {
+  border-radius: 15px;
+  max-width: 100%;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.project-description {
+  color: rgb(122, 122, 122);
+}
+
+.project-price {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.add-to-cart-button {
+  background: rgb(49, 175, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(49, 175, 255, 1) 0%,
+    rgba(0, 123, 252, 1) 100%
+  );
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  color: rgb(219, 233, 248);
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+} */
+/* Apply background color to the wrapper element */
+
+
+.project-listings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project-card {
+  width: 300px;
+  margin: 20px;
+}
+
+.project-logo {
+  width: 100%;
+  height: auto;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-bottom: 15px;
+}
+
+.project-date {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.centered-grid-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Set a specific height or adjust as needed */
+}
+
+.centered-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.project-card {
+  text-align: center;
+  padding: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Set the height as desired */
+  width: 100px; /* Set the width as desired */
+  overflow: hidden; /* Ensure the image stays within the container */
+}
+
+.project-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap between cards */
+  padding: 20px; /* Add padding around the container */
+}
+
+.example-card {
+  flex-basis: calc(50% - 20px); /* Set the card width to 50% with some spacing */
+  max-width: calc(50% - 20px); /* Ensure the card doesn't exceed 50% width */
+  box-sizing: border-box;
+  height: 200px; /* Set the height of the card */
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap between cards */
+  margin-left: 10px; /* Add left margin */
+  margin-right: 10px; /* Add right margin */
+}
+
+.book-card {
+  flex-basis: calc(33.33% - 20px); /* Set the card width to 33.33% with some spacing */
+  max-width: calc(33.33% - 20px); /* Ensure the card doesn't exceed 33.33% width */
+  box-sizing: border-box;
+  /* Additional styles for card */
+}
+
+.container >*{
+  flex: 1 1 350px;
+}
+

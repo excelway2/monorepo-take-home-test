@@ -1,0 +1,36 @@
+
+<div class="py-5">
+  <div class="d-flex justify-content-between mb-3">
+    <!-- Search input field -->
+   
+
+    <a mat-button color="primary" class="new-button" routerLink="/add">+ New</a>
+  </div>
+
+  <div class="d-flex justify-content-between mb-3">
+    <a mat-button color="primary" class="new-button" routerLink="/add">+ New</a>
+  </div>
+<div cdkDropListGroup>
+  <div class="row" cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <ng-container *ngFor="let project of $projects | async; let i = index">
+      <div class="col-md-4 mb-4" cdkDrag [cdkDragData]="project">
+        <mat-card class="card">
+          <img [src]="imageUrl" class="card-img-top" style="height: 150px;" alt="LOGO">
+          <mat-card-content>
+            <h3 class="mat-card-title text-center">{{ project.title }}</h3>
+            <p class="mat-card-subtitle text-center">{{ project.description }}</p>
+            <p class="mat-card-subtitle text-center">Created at: {{ project.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="d-flex justify-content-between">
+              <a mat-button class="edit-button" [routerLink]="['/edit', project?.id]">Edit</a>
+              <button mat-button class="delete-button" (click)="delete(project.id)">Delete</button>
+            </div>                            
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div *ngIf="(i + 1) % 3 === 0" class="w-100"></div>
+    </ng-container>
+  </div>
+</div>
+</div>

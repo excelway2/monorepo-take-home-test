@@ -1,0 +1,28 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="mt-4 p-3 border rounded">
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" formControlName="title" id="title" class="form-control" #titleVar [ngClass]="{ 'border-danger': projectForm.get('title')?.touched && projectForm.get('title')?.errors?.['required'] }" />
+        <div *ngIf="projectForm.get('title')?.touched && projectForm.get('title')?.errors?.['required']" class="text-danger">Title is required</div>
+    </div>
+  
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea formControlName="description" id="description" class="form-control" rows="3" [ngClass]="{ 'border-danger': projectForm.get('description')?.touched && projectForm.get('description')?.errors?.['required'] }"></textarea>
+        <div *ngIf="projectForm.get('description')?.touched && projectForm.get('description')?.errors?.['required']" class="text-danger">Description is required</div>
+      </div>
+    
+  
+    <div class="mb-3">
+      <label for="priority" class="form-label">Priority:</label>
+      <select formControlName="priority" class="form-control" [ngClass]="{ 'border-danger': projectForm.get('priority')?.touched && projectForm.get('priority')?.errors?.['required'] }">
+        <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+      </select>
+      <div *ngIf="projectForm.get('priority')?.touched && projectForm.get('priority')?.errors?.['required']" class="text-danger">Priority is required</div>
+    </div>
+  
+    <div>
+      <button type="submit" [disabled]="!projectForm.valid" class="btn btn-success btn-block">Submit</button>
+    </div>
+    
+  </form>

@@ -1,0 +1,28 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="mt-4 p-3 border rounded">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" formControlName="title" id="title" class="form-control" />
+    </div>
+  
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea formControlName="description" id="description" class="form-control" rows="3"></textarea>
+    </div>
+  
+    <div class="mb-3">
+        <label for="order" class="form-label">Order:</label>
+        <input type="text" disabled formControlName="order" id="order" class="form-control" [min]="maxOrder + 1" [value]="maxOrder + 1"/>
+      </div>    
+  
+    <div class="mb-3">
+      <label for="priority" class="form-label">Priority:</label>
+      <input type="text" formControlName="priority" id="priority" class="form-control" />
+    </div>
+  
+    <div>
+      <button type="submit" [disabled]="!projectForm.valid" class="btn btn-primary">Add Project</button>
+    </div>
+  
+  </form>
+  

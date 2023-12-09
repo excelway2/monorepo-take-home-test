@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+/* Adjustments for Angular Material components */
+
+
+
+.mat-raised-button:hover {
+  background-color: black;
+  border: none;
+}
+
+.edit-button {
+  background-color: rgb(207, 207, 38); /* Set the background color for the "Edit" button */
+}
+
+.delete-button {
+  background-color: rgba(255, 13, 0, 0.839); /* Set the background color for the "Delete" button */
+  margin-left: 200px; /* Add margin to the left of the "Delete" button */
+}
+
+.new-button{
+  background-color: rgb(17, 233, 17);
+}
+

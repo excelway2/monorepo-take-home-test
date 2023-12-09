@@ -1,0 +1,22 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" formControlName="title" id="title" />
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea formControlName="description" id="description"></textarea>
+    </div>
+    <div>
+      <label for="order">Order:</label>
+      <input type="number" formControlName="order" id="order" />
+    </div>
+    <div>
+      <label for="priority">Priority:</label>
+      <input type="text" formControlName="priority" id="priority" />
+    </div>
+    <div>
+      <button type="submit" [disabled]="!projectForm.valid">Add Project</button>
+    </div>
+  </form>
+  

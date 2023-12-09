@@ -1,0 +1,23 @@
+<!-- <section class="project-listings" *ngFor="let project of $projects | async">
+  <div class="project-card">
+    <img [src]="imageUrl" alt="Logo" />
+    <p class="project-name">{{ project.title }}</p>
+    <p class="project-description">{{ project.description }}</p>
+    <p class="project-description">{{ project.createdAt }}</p>
+    <button class="add-to-cart-button">View Project</button>
+  </div>
+</section> -->
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let project of $projects | async">
+    <!-- Your project card content here -->
+    <div class="project-card">
+      <!-- Display project details -->
+      <img [src]="imageUrl" alt="Logo" />
+      <p class="project-name">{{ project.title }}</p>
+      <p class="project-description">{{ project.description }}</p>
+      <p class="project-description">{{ project.createdAt }}</p>
+      <button class="add-to-cart-button">View Project</button>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

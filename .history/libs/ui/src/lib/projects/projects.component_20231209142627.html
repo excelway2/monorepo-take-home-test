@@ -1,0 +1,20 @@
+<div class="py-5">
+  <div class="d-flex justify-content-between mb-3">
+    <a class="btn btn-success" routerLink="/add">+ New</a>
+  </div>
+  
+  <div class="row" cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <div *ngFor="let project of $projects | async" class="col-md-4" cdkDrag>
+      <!-- Your project card content -->
+      <div class="card">
+        <!-- Card content -->
+        <div class="card-footer">
+          <div class="d-flex justify-content-between">
+            <a class="btn btn-warning" [routerLink]="['/edit', project?.id]">Edit</a>
+            <button class="btn btn-danger" (click)="delete(project.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
