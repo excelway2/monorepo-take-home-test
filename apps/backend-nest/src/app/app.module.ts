@@ -3,12 +3,13 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {
-  ProjectsController,
+  ProjectsController, ProjectsModule,
   ProjectsService,
 } from '@monorepo-take-home-test/projects';
+import {PrismaModule} from "../prisma/prisma.module";
 
 @Module({
-  imports: [],
+  imports: [ProjectsModule, PrismaModule],
   controllers: [AppController, ProjectsController],
   providers: [AppService, ProjectsService],
 })

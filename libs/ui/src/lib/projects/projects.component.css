@@ -1,7 +1,7 @@
 :host {
   display: grid;
   gap: 40px;
-  grid-template-columns: repeat(3, 33% [col-start]);
+  grid-template-columns: repeat(3, 30% [col-start]);
 }
 
 .project-card {
@@ -49,3 +49,9 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+

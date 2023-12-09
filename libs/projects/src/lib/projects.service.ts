@@ -1,25 +1,70 @@
 import { PrismaClient, Project } from '@prisma/client';
-import { Injectable } from '@nestjs/common';
+import { Injectable , NotFoundException} from '@nestjs/common';
+import {PrismaService} from "../../../../apps/backend-nest/src/prisma/prisma.service";
 
-const prisma = new PrismaClient();
 @Injectable()
 export class ProjectsService {
-  async findAll(): Promise<Project[]> {
-    return await prisma.project.findMany();
+  constructor(private prisma: PrismaService) {
   }
 
-  async findOne(id: string): Promise<Project | null> {
-    return await prisma.project.findUnique({
+  getProjects() {
+    return this.prisma.project.findMany();
+  }
+
+  getProjectById (projectId: number) {
+    return this.prisma.project.findUnique({
       where: {
-        id,
+        id: projectId.toString()
+      },});
+  }
+
+  async createProject(project: Project) {
+    return this.prisma.project.create({
+      data: {
+        ...project,
       },
     });
   }
 
-  async remove(id: string) {
-    return await prisma.project.delete({
+  async editProject(id: string, edited : Project) {
+    // get the project by id
+    const project =  await this.prisma.project.findUnique({
       where: {
-        id,
+        id: id,
+      },
+    });
+
+    if (!project) {
+      throw new NotFoundException('there is no project for the id' + id)
+    }
+
+    return this.prisma.project.update({
+      where: {
+        id: id,
+      },
+      data: {
+        ...edited,
+      },
+    });
+  }
+
+  async deleteProject(id: string) {
+    // get the project by id
+    const project =  await this.prisma.project.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+
+    if (!project) {
+      throw new NotFoundException('there is no project for the id' + id)
+    }
+
+    // delete project
+    await this.prisma.project.delete({
+      where: {
+        id: id,
       },
     });
   }
