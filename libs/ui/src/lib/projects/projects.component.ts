@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ProjectsService } from '../projects.service';
 import { Observable } from 'rxjs';
 import { Project } from '@prisma/client';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'monorepo-take-home-test-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
@@ -20,5 +20,9 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.$projects = this.projectsService.getAllProjects();
+  }
+
+  removerProject(projectId: string): void {
+    this.projectsService.removerProject(projectId);
   }
 }

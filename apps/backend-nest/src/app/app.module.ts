@@ -6,9 +6,10 @@ import {
   ProjectsController,
   ProjectsService,
 } from '@monorepo-take-home-test/projects';
+import { ProjectModule } from '../project/project.module';
 
 @Module({
-  imports: [],
+  imports: [ProjectModule],
   controllers: [AppController, ProjectsController],
   providers: [AppService, ProjectsService],
 })

@@ -1,9 +1,18 @@
-<section class="project-listings" *ngFor="let project of $projects | async">
+<section class="project-listings" *ngFor="let project of $projects | async" >
   <div class="project-card">
-    <img [src]="imageUrl" alt="Logo" />
-    <p class="project-name">{{ project.title }}</p>
-    <p class="project-description">{{ project.description }}</p>
-    <p class="project-description">{{ project.createdAt }}</p>
-    <button class="add-to-cart-button">View Project</button>
+    <img [src]="imageUrl" alt="Logo" width="50%" />
+    <div>
+      <p class="project-name">{{ project.title }}</p>
+      <p class="project-description">{{ project.description }}</p>
+      <p class="project-priority">Priority: {{ project.priority }}</p>
+      <p class="project-description">{{ project.createdAt | date: 'medium' }}</p>
+    </div>
+    <div class="card-actions">
+      <button [routerLink]="['/edit', project.id]" class="edit-button">
+          Edit Project
+    
+      </button>
+      <button class="delete-button" (click)="removerProject(project.id)">Delete Project</button>
+    </div>
   </div>
 </section>

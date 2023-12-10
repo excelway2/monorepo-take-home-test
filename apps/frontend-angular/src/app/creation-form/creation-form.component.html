@@ -1,0 +1,17 @@
+<form *ngIf="showCreationForm" [formGroup]="creationForm" (ngSubmit)="createProject()" class="creation-form">
+  <input type="text" placeholder="project title" formControlName="title"/>
+  <textarea
+    name=""
+    id=""
+    cols="30"
+    rows="10"
+    placeholder="project description"
+    formControlName="description"
+  ></textarea>
+  <select formControlName="priority" class="priority-selector">
+    <option value="" disabled>Select Priority</option>
+    <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+  </select>   
+  <button type="submit" id="submit-button">Submit</button>
+</form>
+
