@@ -1,0 +1,25 @@
+
+ <div *ngIf="$selectedProject | async as selectedProject"class="bg-white rounded-lg shadow p-6">
+  <img [src]="imageUrl" alt="Logo" class="rounded-full h-100 w-150 mx-auto mb-6" />
+  <h2 class="text-2xl font-semibold mb-4">{{ selectedProject.title }}</h2>
+  <div class="flex justify-between items-center mb-4">
+      <div class="flex items-center space-x-4">
+          <div class="w-4 h-4 rounded-full bg-blue-500"></div>
+          <span class="text-sm text-gray-500">{{ selectedProject.priority }}</span>
+      </div>
+      <span class="text-sm text-gray-500">Order: {{ selectedProject.order }}</span>
+  </div>
+  <p class="text-gray-600 mb-4">{{ selectedProject.description }}</p>
+  <div class="flex justify-between items-center">
+      <span class="text-sm text-gray-500">Created at: {{ selectedProject.createdAt }}</span>
+      <span class="text-sm text-gray-500">Updated at: {{ selectedProject.updatedAt }}</span>
+  </div>
+
+    <div class="mt-4 flex justify-between">
+        <button mat-raised-button color="primary" routerLink="/projects/edit/{{ selectedProject.id }}">Edit Project</button>
+        <button mat-raised-button color="warn" (click)="deleteProject(selectedProject.id)">Delete Project</button>
+    </div>
+</div>
+
+
+

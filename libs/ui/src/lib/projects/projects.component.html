@@ -1,9 +1,9 @@
 <section class="project-listings" *ngFor="let project of $projects | async">
-  <div class="project-card">
+  <div class="project-card" >
     <img [src]="imageUrl" alt="Logo" />
     <p class="project-name">{{ project.title }}</p>
     <p class="project-description">{{ project.description }}</p>
     <p class="project-description">{{ project.createdAt }}</p>
-    <button class="add-to-cart-button">View Project</button>
+    <button class="add-to-cart-button" routerLink="/projects/{{project.id}}" routerLinkActive="router-link-active" >View Project</button>
   </div>
 </section>

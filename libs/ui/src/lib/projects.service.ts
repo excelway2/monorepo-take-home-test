@@ -13,4 +13,21 @@ export class ProjectsService {
   public getAllProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(`${this.API_URL}/projects`);
   }
+
+  public getProjectById(id: string): Observable<Project> {
+    return this.http.get<Project>(`${this.API_URL}/projects/${id}`);
+  }
+
+  public createProject(data: Partial<Project>){
+    return this.http.post<Project>(`${this.API_URL}/projects`, data);
+  }
+
+  public updateProject(id: string, data: Partial<Project>): Observable<Project> {
+    return this.http.put<Project>(`${this.API_URL}/projects/${id}`, data);
+  }
+
+  public deleteProject(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.API_URL}/projects/${id}`);
+  }
+
 }
